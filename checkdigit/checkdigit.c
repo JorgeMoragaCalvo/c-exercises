@@ -2,7 +2,7 @@
 #include <stdlib.h>
 #include <string.h>
 
-/*PROTOTIPO FUNCIONES*/
+/*PROTOTYPE FUNCTIONS*/
 int function1(char *);
 int digit(char *);
 int checkDigit(int);
@@ -27,7 +27,7 @@ int main(){
     return 0;
 }
 
-/*FUNCIONES*/
+/*FUNCTIONS*/
 int function1(char *str){
     int length = 0, i = 0, accum = 0, mul = 2;
 
