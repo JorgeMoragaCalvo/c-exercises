@@ -2,6 +2,11 @@
 #include <stdlib.h>
 #include <string.h>
 
+/* 
+    PROGRAM THAT DETERMINES IF THE VERIFIER CODE OF THE NATIONAL IDENTITY NUMBER (RUT IN CHILE) IS TRUE
+*/
+
+
 /*PROTOTYPE FUNCTIONS*/
 int function1(char *);
 int digit(char *);
