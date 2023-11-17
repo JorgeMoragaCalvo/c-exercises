@@ -13,7 +13,9 @@ int main(){
     scanf("%d", &a);
     printf("Ingrese el segundo numero: ");
     scanf("%d", &b);
-    printf("El resultado es: %.2f", dividend(a, b) + decimals(a, b));
+    printf("La multiplicacion es: %d\n", mulSum(a, b));
+    printf("El resultado de 0.1 x 5 es: %.2f\n", mulSumFloat(0.1, 5));
+    printf("Resultado division es: %.2f", dividend(a, b) + decimals(a, b));
 
     return 0;
 }
@@ -51,6 +53,7 @@ float mulSumFloat(float a , int b){
     return result;
 }
 
+
 float decimals(int a, int b){
     float first_decimal = 0.1, decimal_number = 0.0;
     float second_decimal = 0.01, f = 0.0;
@@ -66,8 +69,8 @@ float decimals(int a, int b){
         int e = dividend(d, b);
         f = mulSumFloat(second_decimal, e);
     } else {
-        int first_remainder = remain(a, b); //first_remainder = 1
-        int first_rest = mulSum(first_remainder, 10); //first_rest = 10
+        int first_remainder = remain(a, b);
+        int first_rest = mulSum(first_remainder, 10);
         int first_rem = dividend(first_rest, b);
         decimal_number = mulSumFloat(first_decimal, first_rem);
 
@@ -79,3 +82,25 @@ float decimals(int a, int b){
 
     return decimal_number + f;
 }
+
+/*
+float decimals(int a, int b){
+    float first_decimal = 0.1, decimal_number = 0.0;
+    float second_decimal = 0.01, f = 0.0;
+
+    int first_remainder = remain(a, b);
+    int first_rest = mulSum(first_remainder, 10);
+    int first_rem = dividend(first_rest, b);
+    decimal_number = mulSumFloat(first_decimal, first_rem);
+
+    int c = remain(first_rest, b);
+    int d = mulSum(c, 10);
+    int e = dividend(d, b);
+    f = mulSumFloat(second_decimal, e);
+
+    if (a < b) {
+        return decimal_number + f;
+    } else {
+        return (float)dividend(a, b) + decimal_number + f;
+    }
+}*/
